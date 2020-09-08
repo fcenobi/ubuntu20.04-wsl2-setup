@@ -23,7 +23,55 @@ sudo apt -y install \
   libffi-dev \
   liblzma-dev \
   python-openssl \
-  git
+  git\
+  apt-utils\
+  apt-transport-https\
+  mc\
+  net-tools\
+  p7zip-full
+  unzip\
+  htop \
+  apt-config-icons-large \ 
+apt-file \ 
+apt-listchanges \ 
+apt-show-versions \ 
+apt-transport-https \ 
+apt-utils \ 
+openssh-server \
+autoconf \ 
+binutils \ 
+coreutils \ 
+dirmngr \ 
+elinks \ 
+elinks-data \ 
+g++ \ 
+g++-8 \ 
+gcc \ 
+gcc-8 \ 
+gcc-8-base \ 
+git-extras \ 
+git-man \ 
+gpg \ 
+gzip \ 
+hostname \ 
+html2text \ 
+links \ 
+links2 \ 
+lsof \ 
+lynx \ 
+lynx-common \ 
+ncurses-base \ 
+ncurses-bin \ 
+ncurses-term \ 
+nmap \ 
+sshfs \ 
+ssl-cert \ 
+strace \ 
+telnet \ 
+traceroute \ 
+tree \ 
+unar 
+
 
 install_python3_pip() {
   sudo apt install -y python3-pip
