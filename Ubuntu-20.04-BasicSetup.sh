@@ -1,4 +1,120 @@
 #!/bin/bash
+#!/bin/bash
+
+echo ******************************************************************
+echo  WSL INSTALL SCRIPTS
+echo ******************************************************************
+echo ""
+echo ""
+echo ""
+echo ******************************************************************
+echo  lsb data
+echo ******************************************************************
+echo ""
+cat /etc/lsb-release 
+echo ""
+echo ""
+echo ""
+echo ******************************************************************
+
+
+
+
+
+
+
+discode=$(grep DISTRIB_CODENAME  /etc/lsb-release  |  cut -d'=' -f2)
+
+
+echo ******************************************************************
+echo  BACKUP SOURCES.LIST
+echo ******************************************************************
+
+cp /etc/apt/sources.list /etc/apt/sources.list$SECONDS 2>/dev/null
+
+
+echo ******************************************************************
+echo  ADD REPO KEY
+echo ******************************************************************
+
+wget http://www.webmin.com/jcameron-key.asc 2>/dev/null
+apt-key add jcameron-key.asc 2>/dev/null
+
+
+echo ******************************************************************
+echo  UPDATE  SOURCES.LIST
+echo ******************************************************************
+
+
+
+cat << EOF > /etc/apt/sources.list
+
+deb http://us.archive.ubuntu.com/ubuntu/ $discode main restricted multiverse universe
+deb http://security.ubuntu.com/ubuntu $discode-security main restricted multiverse universe
+deb http://us.archive.ubuntu.com/ubuntu/ $discode-backports main restricted universe multiverse
+deb http://us.archive.ubuntu.com/ubuntu/ $discode-updates main restricted multiverse universe
+#
+deb http://archive.canonical.com/ubuntu $discode partner
+#
+deb http://download.webmin.com/download/repository sarge contrib
+
+ 
+EOF
+
+
+
+echo ******************************************************************
+echo  CREATE WSL.COMF
+echo ******************************************************************
+
+
+cat > /etc/wsl.conf << EOF
+
+#Let’s enable extra metadata options by default
+[automount]
+enabled = true
+#root = /mnt/
+options = "metadata,umask=22,fmask=11"
+mountFsTab = false
+
+#Let’s enable DNS – even though these are turned on by default, we’ll specify here just to be explicit.
+[network]
+generateHosts = true
+generateResolvConf = true
+[interop]
+appendWindowsPath = true
+[user]
+root
+
+EOF
+
+echo ******************************************************************
+echo  UPDATE  APT REPO
+echo ******************************************************************
+
+apt-get update -y 2>/dev/null
+
+echo ******************************************************************
+echo  UPDATE  PKG
+echo ******************************************************************
+
+
+apt-get upgrade -y 2>/dev/null 
+
+echo ******************************************************************
+echo  INSTALL BASE PKG
+echo ""
+echo echo  apt-utils apt-transport-https 
+echo wget curl
+echo git
+echo mc
+echo net-tools
+echo p7zip-full
+echo unzip htop 
+echo ******************************************************************
+
+apt-get -y install apt-utils apt-transport-https wget curl git mc net-tools  p7zip-full unzip htop 2>/dev/null
+
 
 sudo apt update && sudo apt upgrade -y
 
