@@ -1,6 +1,4 @@
 #!/bin/bash
-#!/bin/bash
-
 echo ******************************************************************
 echo  WSL INSTALL SCRIPTS
 echo ******************************************************************
@@ -119,75 +117,73 @@ apt-get -y install apt-utils apt-transport-https wget curl git mc net-tools  p7z
 sudo apt update && sudo apt upgrade -y
 
 # Install basic packages
-sudo apt -y install \
-  software-properties-common \
-  build-essential \
-  zip unzip \
-  make \
-  libssl-dev \
-  zlib1g-dev \
-  libbz2-dev \
-  libreadline-dev \
-  libsqlite3-dev \
-  wget \
-  curl \
-  llvm \
-  libncurses5-dev \
-  libncursesw5-dev \
-  xz-utils \
-  tk-dev \
-  libffi-dev \
-  liblzma-dev \
-  python-openssl \
-  git\
-  apt-utils\
-  apt-transport-https\
-  mc\
-  net-tools\
-  p7zip-full
-  unzip\
-  htop \
-  apt-config-icons-large \ 
-apt-file \ 
-apt-listchanges \ 
-apt-show-versions \ 
-apt-transport-https \ 
-apt-utils \ 
-openssh-server \
-autoconf \ 
-binutils \ 
-coreutils \ 
-dirmngr \ 
-elinks \ 
-elinks-data \ 
-g++ \ 
-g++-8 \ 
-gcc \ 
-gcc-8 \ 
-gcc-8-base \ 
-git-extras \ 
-git-man \ 
-gpg \ 
-gzip \ 
-hostname \ 
-html2text \ 
-links \ 
-links2 \ 
-lsof \ 
-lynx \ 
-lynx-common \ 
-ncurses-base \ 
-ncurses-bin \ 
-ncurses-term \ 
-nmap \ 
-sshfs \ 
-ssl-cert \ 
-strace \ 
-telnet \ 
-traceroute \ 
-tree \ 
-unar 
-
+sudo apt -y install software-properties-common 
+sudo apt -y install build-essential 
+sudo apt -y install zip unzip 
+sudo apt -y install make 
+sudo apt -y install libssl-dev 
+sudo apt -y install zlib1g-dev 
+sudo apt -y install libbz2-dev 
+sudo apt -y install libreadline-dev 
+sudo apt -y install libsqlite3-dev 
+sudo apt -y install wget 
+sudo apt -y install curl 
+sudo apt -y install llvm 
+sudo apt -y install libncurses5-dev 
+sudo apt -y install libncursesw5-dev 
+sudo apt -y install xz-utils 
+sudo apt -y install tk-dev 
+sudo apt -y install libffi-dev 
+sudo apt -y install liblzma-dev 
+sudo apt -y install python-openssl 
+sudo apt -y install git
+sudo apt -y install apt-utils
+sudo apt -y install apt-transport-https
+sudo apt -y install mc
+sudo apt -y install net-tools
+sudo apt -y install p7zip-full
+sudo apt -y install unzip
+sudo apt -y install htop 
+sudo apt -y install apt-config-icons-large 
+sudo apt -y install apt-file 
+sudo apt -y install apt-listchanges 
+sudo apt -y install apt-show-versions 
+sudo apt -y install apt-transport-https 
+sudo apt -y install apt-utils 
+sudo apt -y install openssh-server 
+sudo apt -y install autoconf 
+sudo apt -y install binutils 
+sudo apt -y install coreutils 
+sudo apt -y install dirmngr 
+sudo apt -y install elinks 
+sudo apt -y install elinks-data 
+sudo apt -y install g++ 
+sudo apt -y install g++-8 
+sudo apt -y install gcc 
+sudo apt -y install gcc-8 
+sudo apt -y install gcc-8-base 
+sudo apt -y install git-extras 
+sudo apt -y install git-man 
+sudo apt -y install gpg 
+sudo apt -y install gzip 
+sudo apt -y install hostname 
+sudo apt -y install html2text 
+sudo apt -y install links 
+sudo apt -y install links2 
+sudo apt -y install lsof 
+sudo apt -y install lynx 
+sudo apt -y install lynx-common 
+sudo apt -y install ncurses-base 
+sudo apt -y install ncurses-bin 
+sudo apt -y install ncurses-term 
+sudo apt -y install nmap 
+sudo apt -y install sshfs 
+sudo apt -y install ssl-cert 
+sudo apt -y install strace 
+sudo apt -y install telnet 
+sudo apt -y install traceroute 
+sudo apt -y install tree 
+sudo apt -y install unar 
 
 install_python3_pip() {
   sudo apt install -y python3-pip
